@@ -1,4 +1,4 @@
-Ripple Carry Adder (RCA) - Complete RTL-to-GDSII ASIC Flow 🚀
+# Ripple Carry Adder (RCA) - Complete RTL-to-GDSII ASIC Flow 🚀
 
 Welcome to the Ripple Carry Adder physical design project! This repository documents the complete journey of a 4-bit Ripple Carry Adder from behavioral Verilog code to a fully routed, manufacturing-ready GDSII layout.
 
@@ -29,7 +29,7 @@ Based on the physical design flow stages, the repository is structured as follow
 ├── final/              # Final layout views and DEF/LEF files
 ├── floorplan/          # Floorplanning outputs and PDN screenshots
 ├── placement/          # Standard cell placement views
-├── rca_screenshots/    # GTKWave simulation waveforms
+├── rca_screenshots/    # Image assets for documentation
 ├── reports/            # Power, Area, and Timing (STA) reports
 ├── routing/            # Global and detailed routing visual logs
 ├── signoff/            # DRC, LVS, and Antenna manufacturability checks
