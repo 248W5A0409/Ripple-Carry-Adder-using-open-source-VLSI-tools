@@ -28,7 +28,7 @@ Here is a step-by-step breakdown of the automated pipeline execution, accompanie
 
 1. RTL Design & Functional Verification
 
-The behavioral logic of the 4-bit Ripple Carry Adder was designed using Verilog. Before pushing to physical design, the logic was rigorously tested using a custom testbench to ensure proper carry propagation and sum calculations.
+The behavioral logic of the 4-bit Ripple Carry Adder was designed using Verilog. Before pushing to physical design, the logic was rigorously tested using a custom testbench to ensure proper carry propagation and sum calculations. 
 
 ![Simulation Results](rca_screenshots/wv.png)
 
@@ -41,6 +41,13 @@ The Verilog code is mapped to standard cells from the Sky130 library using Yosys
 3. Floorplanning & Power Delivery Network (PDN)
 
 The core area is defined, I/O pins are placed along the boundaries, and tap/decap cells are inserted. Following this, the PDN is generated—creating the robust metal grid of VDD and GND stripes to power the core evenly.
+
+NOTE: You can view these '.odb' files in your results of respective floorplan/placement/routing using openroad
+Steps to view '.odb' files:
+1. open the openlane docker container using 'make mount'
+2. Go to the path required using 'cd /path'
+3. run 'openroad -gui'
+4. In the openroad window give TCL command at the bottom - 'read_db your_file_name.odb'
 
 ![Floorplanning](rca_screenshots/floorplane.png)
 
@@ -94,12 +101,15 @@ Sky130 PDK configured
 Step 1: Run RTL Simulation
 
 # Compile
-'''
+
 iverilog -o rca src/rca.v src/tb_rca.v
-'''
+
 # Execute
+
 vvp rca
+
 # View Waveforms
+
 gtkwave rca.vcd
 
 
