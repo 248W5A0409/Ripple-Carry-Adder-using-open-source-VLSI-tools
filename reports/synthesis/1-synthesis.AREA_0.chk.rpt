@@ -1,0 +1,9 @@
+
+60. Executing CHECK pass (checking for obvious problems).
+Checking module rca_4bit...
+Warning: Wire rca_4bit.\sum [3] is used but has no driver.
+Warning: Wire rca_4bit.\sum [2] is used but has no driver.
+Warning: Wire rca_4bit.\sum [1] is used but has no driver.
+Warning: Wire rca_4bit.\sum [0] is used but has no driver.
+Warning: Wire rca_4bit.\cout is used but has no driver.
+Found and reported 5 problems.

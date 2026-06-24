@@ -1,0 +1,19 @@
+Design Name: rca_4bit
+Run Directory: /openlane/designs/rca/runs/RUN_2026.06.23_11.32.13
+----------------------------------------
+
+Magic DRC Summary:
+Source: /openlane/designs/rca/runs/RUN_2026.06.23_11.32.13/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /openlane/designs/rca/runs/RUN_2026.06.23_11.32.13/logs/signoff/37-rca_4bit.lef.lvs.log
+Number of nets: 47                         |Number of nets: 47                         
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /openlane/designs/rca/runs/RUN_2026.06.23_11.32.13/logs/signoff/39-arc.log
+Pin violations: 0
+Net violations: 0
