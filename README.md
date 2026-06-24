@@ -47,11 +47,11 @@ The Verilog code is mapped to standard cells from the Sky130 library using Yosys
 The core area is defined, I/O pins are placed along the boundaries, and tap/decap cells are inserted. Following this, the PDN is generated—creating the robust metal grid of VDD and GND stripes to power the core evenly.
 
 NOTE: You can view these '.odb' files in your results of respective floorplan/placement/routing using openroad
-Steps to view '.odb' files:
-1. open the openlane docker container using 'make mount'
-2. Go to the path required using 'cd /path'
-3. run 'openroad -gui'
-4. In the openroad window give TCL command at the bottom - 'read_db your_file_name.odb'
+Steps to view ```'.odb'```files:
+1. open the openlane docker container using ```'make mount'```
+2. Go to the path required using ```'cd /path'```
+3. run ```'openroad -gui'```
+4. In the openroad window give TCL command at the bottom - ```'read_db your_file_name.odb'```
 
 ![Floorplanning](rca_screenshots/floorplane.png)
 
@@ -106,29 +106,29 @@ Sky130 PDK configured
 
 Compile
 
-iverilog -o rca src/rca.v src/tb_rca.v
+$ iverilog -o rca src/rca.v src/tb_rca.v
 
 Execute
-
-vvp rca
-
+```
+$ vvp rca
+```
 View Waveforms
-
-gtkwave rca.vcd
-
+```
+$ gtkwave rca.vcd
+```
 
 # Step 2: Run the Physical Design Flow
 
 Ensure your OpenLane environment is active, and copy this project directory into the OpenLane designs/ folder.
 
 Launch the OpenLane Docker environment
-
-make mount
-
+```
+$ make mount
+```
 Run the automated physical design flow  
-
-./flow.tcl -design Ripple-Carry-Adder-using-open-source-VLSI-tools
-
+```
+$ ./flow.tcl -design Ripple-Carry-Adder-using-open-source-VLSI-tools
+```
 
 # 🤝 Acknowledgments
 
