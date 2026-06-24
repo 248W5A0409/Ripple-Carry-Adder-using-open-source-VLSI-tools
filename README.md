@@ -79,17 +79,17 @@ All reports can be found in the signoff/ and reports/ directories. The final exp
 
 # 📁 Repository Structure
 
-├── final/              # Final layout views and DEF/LEF files  
-├── floorplan/          # Floorplanning outputs and PDN screenshots  
-├── placement/          # Standard cell placement views  
-├── rca_screenshots/    # Image assets for documentation  
-├── reports/            # Power, Area, and Timing (STA) reports  
-├── routing/            # Global and detailed routing visual logs  
-├── signoff/            # DRC, LVS, and Antenna manufacturability checks  
-├── src/                # Verilog behavioral source files and testbenches  
-├── synthesis/          # Synthesized netlist and statistics  
-├── config.json         # OpenLane configuration file for the flow  
-└── rca_4bit.gds        # Final GDSII format file ready for tape-out  
+├── final/  
+├── floorplan/  
+├── placement/  
+├── rca_screenshots/  
+├── reports/  
+├── routing/  
+├── signoff/  
+├── src/  
+├── synthesis/  
+├── config.json  
+└── rca_4bit.gds  
 
 
 # 🚀 How to Reproduce the Flow
