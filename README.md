@@ -36,23 +36,35 @@ The behavioral logic of the 4-bit Ripple Carry Adder was designed using Verilog.
 
 The Verilog code is mapped to standard cells from the Sky130 library using Yosys. The tool optimizes the combinational logic into a gate-level netlist.
 
+![Simulation Results](rca_screenshots/wv_1.png)
+
 3. Floorplanning & Power Delivery Network (PDN)
 
 The core area is defined, I/O pins are placed along the boundaries, and tap/decap cells are inserted. Following this, the PDN is generated—creating the robust metal grid of VDD and GND stripes to power the core evenly.
+
+![Floorplanning](rca_screenshots/floorplane.png)
 
 4. Placement
 
 OpenROAD assigns physical locations to the synthesized standard cells inside the defined core area. The placement is optimized to reduce total wire length and alleviate routing congestion.
 
+![Placement](rca_screenshots/placement_1.png)
+![Placement](rca_screenshots/placement_1.png)
+
 5. Routing
 
 This step physically connects the placed cells according to the netlist. It is divided into Global Routing (planning the general region for wires) and Detailed Routing (assigning exact metal layers and tracks, avoiding shorts/opens).
+
+![Routing](rca_screenshots/routing.png)
+![Routing](rca_screenshots/routing.png)
 
 6. Signoff & Final Layout (GDSII)
 
 The final and most crucial step. The design undergoes strict physical and electrical verification (DRC, LVS, and Antenna checks) to ensure manufacturability.
 
 All reports can be found in the signoff/ and reports/ directories. The final exported blueprint is rca_4bit.gds, visualized below:
+
+![Final GDS](rca_screenshots/gds.png)
 
 # 📁 Repository Structure
 
