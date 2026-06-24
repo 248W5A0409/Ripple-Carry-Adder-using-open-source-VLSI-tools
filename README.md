@@ -67,7 +67,7 @@ All reports can be found in the signoff/ and reports/ directories. The final exp
 ![Final GDS](rca_screenshots/gds.png)
 
 # 📁 Repository Structure
-'''
+
 ├── final/              # Final layout views and DEF/LEF files
 ├── floorplan/          # Floorplanning outputs and PDN screenshots
 ├── placement/          # Standard cell placement views
@@ -79,7 +79,7 @@ All reports can be found in the signoff/ and reports/ directories. The final exp
 ├── synthesis/          # Synthesized netlist and statistics
 ├── config.json         # OpenLane configuration file for the flow
 └── rca_4bit.gds        # Final GDSII format file ready for tape-out
-'''
+
 
 # 🚀 How to Reproduce the Flow
 
@@ -94,7 +94,8 @@ Sky130 PDK configured
 Step 1: Run RTL Simulation
 
 # Compile
-iverilog -o rca src/rca.v src/tb_rca.v
+
+('''iverilog -o rca src/rca.v src/tb_rca.v)
 # Execute
 vvp rca
 # View Waveforms
