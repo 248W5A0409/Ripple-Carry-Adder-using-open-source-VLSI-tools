@@ -4,7 +4,7 @@ Welcome to the Ripple Carry Adder physical design project! This repository docum
 
 This project was built entirely using the open-source EDA toolchain provided by OpenLane, targeting the SkyWater 130nm (Sky130) Process Design Kit (PDK).
 
-🛠️ Tools & Technologies
+# 🛠️ Tools & Technologies
 
 Process Node: SkyWater 130nm (sky130A)
 
@@ -22,35 +22,17 @@ Static Timing Analysis (STA): OpenSTA
 
 Layout Viewer: KLayout / Magic
 
-📁 Repository Structure
+# 📖 The RTL-to-GDSII Flow & Visual Journey
 
-Based on the physical design flow stages, the repository is structured as follows:
-
-├── final/              # Final layout views and DEF/LEF files
-├── floorplan/          # Floorplanning outputs and PDN screenshots
-├── placement/          # Standard cell placement views
-├── rca_screenshots/    # Image assets for documentation
-├── reports/            # Power, Area, and Timing (STA) reports
-├── routing/            # Global and detailed routing visual logs
-├── signoff/            # DRC, LVS, and Antenna manufacturability checks
-├── src/                # Verilog behavioral source files and testbenches
-├── synthesis/          # Synthesized netlist and statistics
-├── config.json         # OpenLane configuration file for the flow
-└── rca_4bit.gds        # Final GDSII format file ready for tape-out
-
-
-📖 The RTL-to-GDSII Flow & Visual Journey
-
-Here is a step-by-step breakdown of the automated pipeline execution, accompanied by visual evidence from the project.
+Here is a step-by-step breakdown of the automated pipeline execution, accompanied by visual evidence from the project generated via OpenROAD and Magic.
 
 1. RTL Design & Functional Verification
 
-The behavioral logic of the 4-bit Ripple Carry Adder was designed using Verilog. Before pushing to physical design, the logic was rigorously tested using iverilog and a custom testbench to ensure proper carry propagation and sum calculations.
+The behavioral logic of the 4-bit Ripple Carry Adder was designed using Verilog. Before pushing to physical design, the logic was rigorously tested using a custom testbench to ensure proper carry propagation and sum calculations.
 
 2. Logic Synthesis
 
 The Verilog code is mapped to standard cells from the Sky130 library using Yosys. The tool optimizes the combinational logic into a gate-level netlist.
-(Check the synthesis/ directory for gate-level netlists and component statistics).
 
 3. Floorplanning & Power Delivery Network (PDN)
 
@@ -66,17 +48,26 @@ This step physically connects the placed cells according to the netlist. It is d
 
 6. Signoff & Final Layout (GDSII)
 
-The final and most crucial step. The design undergoes strict physical and electrical verification:
+The final and most crucial step. The design undergoes strict physical and electrical verification (DRC, LVS, and Antenna checks) to ensure manufacturability.
 
-DRC (Design Rule Check): Ensuring spacing and width rules are met for fabrication. (0 Violations!)
+All reports can be found in the signoff/ and reports/ directories. The final exported blueprint is rca_4bit.gds, visualized below:
 
-LVS (Layout vs. Schematic): Ensuring the final routed layout exactly matches the expected schematic.
+# 📁 Repository Structure
 
-STA (Static Timing Analysis): Verifying there are no setup or hold timing violations.
+├── final/              # Final layout views and DEF/LEF files
+├── floorplan/          # Floorplanning outputs and PDN screenshots
+├── placement/          # Standard cell placement views
+├── rca_screenshots/    # Image assets for documentation
+├── reports/            # Power, Area, and Timing (STA) reports
+├── routing/            # Global and detailed routing visual logs
+├── signoff/            # DRC, LVS, and Antenna manufacturability checks
+├── src/                # Verilog behavioral source files and testbenches
+├── synthesis/          # Synthesized netlist and statistics
+├── config.json         # OpenLane configuration file for the flow
+└── rca_4bit.gds        # Final GDSII format file ready for tape-out
 
-All reports can be found in the signoff/ and reports/ directories. The final exported blueprint is rca_4bit.gds, visible below via KLayout:
 
-🚀 How to Reproduce the Flow
+# 🚀 How to Reproduce the Flow
 
 Prerequisites
 
@@ -86,13 +77,7 @@ OpenLane installed via Docker
 
 Sky130 PDK configured
 
-Step 1: Clone the Repository
-
-git clone https://github.com/248W5A0409/Ripple-Carry-Adder-using-open-source-VLSI-tools.git
-cd Ripple-Carry-Adder-using-open-source-VLSI-tools
-
-
-Step 2: Run RTL Simulation
+Step 1: Run RTL Simulation
 
 # Compile
 iverilog -o rca src/rca.v src/tb_rca.v
@@ -102,14 +87,14 @@ vvp rca
 gtkwave rca.vcd
 
 
-Step 3: Run the Physical Design Flow
+Step 2: Run the Physical Design Flow
 
 Ensure your OpenLane environment is active, and copy this project directory into the OpenLane designs/ folder.
 
 # Launch the OpenLane Docker environment
 make mount
 
-# Run the automated physical design flow using the provided config.json
+# Run the automated physical design flow
 ./flow.tcl -design Ripple-Carry-Adder-using-open-source-VLSI-tools
 
 
