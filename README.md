@@ -94,8 +94,9 @@ Sky130 PDK configured
 Step 1: Run RTL Simulation
 
 # Compile
-
-(''') $ iverilog -o rca src/rca.v src/tb_rca.v
+'''bash
+iverilog -o rca src/rca.v src/tb_rca.v
+'''
 # Execute
 vvp rca
 # View Waveforms
