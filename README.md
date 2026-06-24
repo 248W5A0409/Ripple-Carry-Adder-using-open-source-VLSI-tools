@@ -1,10 +1,12 @@
 # Ripple Carry Adder (RCA) - Complete RTL-to-GDSII ASIC Flow 🚀
 
-![GDS from TinyTapeot Viewer](rca_screenshots/rca_tapeout.png)
 
 Welcome to the Ripple Carry Adder physical design project! This repository documents the complete journey of a 4-bit Ripple Carry Adder from behavioral Verilog code to a fully routed, manufacturing-ready GDSII layout.
 
 This project was built entirely using the open-source EDA toolchain provided by OpenLane, targeting the SkyWater 130nm (Sky130) Process Design Kit (PDK).
+
+![GDS from TinyTapeot Viewer](rca_screenshots/rca_tapeout.png)
+
 
 # 🛠️ Tools & Technologies
 
