@@ -4,7 +4,7 @@ Welcome to the Ripple Carry Adder physical design project! This repository docum
 
 This project was built entirely using the open-source EDA toolchain provided by OpenLane, targeting the SkyWater 130nm (Sky130) Process Design Kit (PDK).
 
-# 🛠️ Tools & Technologies
+🛠️ Tools & Technologies
 
 Process Node: SkyWater 130nm (sky130A)
 
@@ -22,7 +22,7 @@ Static Timing Analysis (STA): OpenSTA
 
 Layout Viewer: KLayout / Magic
 
-# 📖 The RTL-to-GDSII Flow & Visual Journey
+📖 The RTL-to-GDSII Flow & Visual Journey
 
 Here is a step-by-step breakdown of the automated pipeline execution, accompanied by visual evidence from the project generated via OpenROAD and Magic.
 
@@ -52,7 +52,7 @@ The final and most crucial step. The design undergoes strict physical and electr
 
 All reports can be found in the signoff/ and reports/ directories. The final exported blueprint is rca_4bit.gds, visualized below:
 
-# 📁 Repository Structure
+📁 Repository Structure
 
 ├── final/              # Final layout views and DEF/LEF files
 ├── floorplan/          # Floorplanning outputs and PDN screenshots
@@ -67,7 +67,7 @@ All reports can be found in the signoff/ and reports/ directories. The final exp
 └── rca_4bit.gds        # Final GDSII format file ready for tape-out
 
 
-# 🚀 How to Reproduce the Flow
+🚀 How to Reproduce the Flow
 
 Prerequisites
 
