@@ -94,7 +94,7 @@ Sky130 PDK configured
 Step 1: Run RTL Simulation
 
 # Compile
-'''bash
+'''
 iverilog -o rca src/rca.v src/tb_rca.v
 '''
 # Execute
