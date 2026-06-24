@@ -102,32 +102,34 @@ OpenLane installed via Docker
 
 Sky130 PDK configured
 
-Step 1: Run RTL Simulation
+# Step 1: Run RTL Simulation
 
-# Compile
+Compile
 
 iverilog -o rca src/rca.v src/tb_rca.v
 
-# Execute
+Execute
 
 vvp rca
 
-# View Waveforms
+View Waveforms
 
 gtkwave rca.vcd
 
 
-Step 2: Run the Physical Design Flow
+# Step 2: Run the Physical Design Flow
 
 Ensure your OpenLane environment is active, and copy this project directory into the OpenLane designs/ folder.
 
-# Launch the OpenLane Docker environment
+Launch the OpenLane Docker environment
+
 make mount
 
-# Run the automated physical design flow
+Run the automated physical design flow  
+
 ./flow.tcl -design Ripple-Carry-Adder-using-open-source-VLSI-tools
 
 
-🤝 Acknowledgments
+# 🤝 Acknowledgments
 
 Special thanks to the open-source silicon community, the OpenROAD project, and Google/SkyWater for making these powerful tools and PDKs freely available for learning and innovation.
