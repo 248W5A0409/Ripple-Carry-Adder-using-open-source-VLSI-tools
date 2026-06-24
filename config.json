@@ -1,0 +1,14 @@
+{
+    "DESIGN_NAME": "mux64",
+    "VERILOG_FILES": "dir::src/mux64.v",
+    
+    "CLOCK_PORT": null,
+    "CLOCK_NET": null,
+    
+    "//": "We are forcing a 100x100 micrometer box to ensure enough perimeter for 71 pins",
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 100 100",
+    
+    "RT_MAX_LAYER": "met4",
+    "DIODE_INSERTION_STRATEGY": 3
+}
